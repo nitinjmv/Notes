@@ -74,3 +74,32 @@ ENTRYPOINT specifies that the instruction within it will always be run when the 
 This command provides an option to configure the parameters and the executables. If the DockerFile does not have this command, then it would still get inherited from the base image mentioned in the FROM instruction.
 - The most commonly used ENTRYPOINT is /bin/sh or /bin/bash for most of the base images.
 As part of good practices, every DockerFile should have at least one of these two commands
+
+
+#### List all Images
+
+`docker images`
+
+#### List all running containers
+
+`docker ps`
+
+#### List all containers
+
+`docker ps -a`
+
+#### Stop container
+
+`docker stop container_id`
+
+#### Build docker image
+
+`docker build`` command automatically pick up the file named with Dockerfile.
+
+##### In case of custom dockerfile (name)
+
+`docker build -f dockerfile_name .`
+
+##### Build image with tag
+
+`docker build -t tag_name -f dockerfile_name .`

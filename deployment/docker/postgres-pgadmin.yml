@@ -1,0 +1,36 @@
+# docker-compose -f postgres-pgadmin.yml up -d
+# validate - docker ps
+# Access pgadmin - http://localhost:5050/
+# Login with admin@admin.com/root
+#
+# docker-compose -f postgres-pgadmin.yml down
+
+version: "3.8"
+services:
+  ### PG database
+  postgresqldb:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=productdb
+    networks:
+      - postgres
+
+  ### PGadmin
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "5050:80"
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
