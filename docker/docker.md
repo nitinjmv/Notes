@@ -103,3 +103,39 @@ As part of good practices, every DockerFile should have at least one of these tw
 ##### Build image with tag
 
 `docker build -t tag_name -f dockerfile_name .`
+
+
+##### Remove dangle image
+`docker image prune`
+
+##### Remove dangle & unused image
+`docker image prune -a`
+
+##### Delete cache dangle image
+`docker builder prune`
+
+##### Delete all 
+`docker builder prune -a`
+
+
+
+## Dockerfile commands
+
+`ADD`
+`COPY`
+
+`WORKDIR`
+
+`ENV`
+
+`USER`
+
+`CMD`
+
+`ENTRYPOINT`
+
+`EXPOSE`
+
+`VOLUME`
+
+
