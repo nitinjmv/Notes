@@ -122,6 +122,7 @@ As part of good practices, every DockerFile should have at least one of these tw
 ## Dockerfile commands
 
 `ADD`
+
 `COPY`
 
 `WORKDIR`
